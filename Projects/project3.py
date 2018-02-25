@@ -1,4 +1,4 @@
-Unit 2: Petal Power
+# Unit 2: Petal Power
 import pandas as pd
 
 inventory = pd.read_csv('inventory.csv')
@@ -19,7 +19,7 @@ inventory['in_stock'] = inventory.apply(in_stock, axis=1)
 
 inventory['total_value'] = inventory.price * inventory.quantity
 
-combine_lambda = lambda row:'{} - {}'.format(row.product_type, row.product_description)
+combine_lambda = lambda row: '{} - {}'.format(row.product_type, row.product_description)
 
 inventory['full_description'] = inventory.apply(combine_lambda, axis=1)
 
